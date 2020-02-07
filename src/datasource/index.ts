@@ -1,5 +1,3 @@
-import { LatLng } from "leaflet";
-
 export enum ContainerType {
   paper = "Papír",
   mixedGlass = "Směsné sklo",
@@ -16,10 +14,15 @@ export type Container = {
   clearDay: string;
 };
 
+type Location = {
+  latitude: number;
+  longitude: number;
+};
+
 export type Spot = {
   uid: string;
   /** Human readable address, street name, house number and short description */
   address: string;
-  location: LatLng;
+  location: Location;
   containers: Container[];
 };
