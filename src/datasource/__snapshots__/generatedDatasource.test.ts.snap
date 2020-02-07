@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`properly maps spots and containers 1`] = `
+Array [
+  Object {
+    "address": "A. Trägera 266/113",
+    "containers": Array [
+      Object {
+        "clearDay": "úterý",
+        "type": "Papír",
+        "uid": "t1",
+      },
+      Object {
+        "clearDay": "pátek, úterý",
+        "type": "Kovy",
+        "uid": "t2",
+      },
+    ],
+    "location": Object {
+      "latitude": 49.005944075539205,
+      "longitude": 14.476660503581881,
+    },
+    "uid": "0cbcb8b2-7de5-4603-bc9a-da5b699d9172",
+  },
+]
+`;

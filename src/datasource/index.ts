@@ -1,3 +1,5 @@
+import { getMappedData } from "datasource/generatedDatasource";
+
 export enum ContainerType {
   paper = "Papír",
   mixedGlass = "Směsné sklo",
@@ -27,35 +29,9 @@ export type Spot = {
   containers: Container[];
 };
 
-export async function getSpots(): Promise<Spot[]> {
-  return new Promise((resolve, reject) => {
-    const spots = require("./generated/spots.json");
-    const containers = require("./generated/trashes.json");
-    const containerMap = new Map<string, Container>(
-      containers.map((rawContainer: any): [string, Container] => {
-        return [
-          rawContainer.uid,
-          {
-            uid: rawContainer.uid,
-            clearDay: rawContainer.clear_day,
-            type: rawContainer.type
-          }
-        ];
-      })
-    );
-
-    const result: Spot[] = spots.map((rawSpot: any) => {
-      return {
-        uid: rawSpot.uid,
-        address: rawSpot.location.address_simple,
-        location: {
-          latitude: rawSpot.location.location_latitude,
-          longitude: rawSpot.location.location_longitude
-        },
-        containers: rawSpot.trashes.map((uid: string) => containerMap.get(uid))
-      };
-    });
-
-    resolve(result);
+export function getSpots(): Promise<Spot[]> {
+  return new Promise(async (resolve, reject) => {
+    // TODO: implement datasource selection once we need it
+    resolve(await getMappedData());
   });
 }
