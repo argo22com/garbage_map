@@ -1,3 +1,5 @@
+import { getMappedData } from "datasource/generatedDatasource";
+
 export enum ContainerType {
   paper = "Papír",
   mixedGlass = "Směsné sklo",
@@ -27,18 +29,9 @@ export type Spot = {
   containers: Container[];
 };
 
-export async function getSpots(): Promise<Spot[]> {
-  return new Promise((resolve, reject) => {
-    resolve([
-      {
-        uid: "123-123-123",
-        address: "dummy data",
-        location: {
-          latitude: 14.123,
-          longitude: 15.345
-        },
-        containers: []
-      }
-    ]);
+export function getSpots(): Promise<Spot[]> {
+  return new Promise(async (resolve, reject) => {
+    // TODO: implement datasource selection once we need it
+    resolve(await getMappedData());
   });
 }

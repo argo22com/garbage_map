@@ -1,5 +1,7 @@
 import { getSpots } from "datasource/index";
 
-test("getSpots returns promise of array", () => {
-  getSpots().then(data => expect(data).toHaveLength(1));
+test("getSpots returns non-empty list", () => {
+  getSpots().then(data => {
+    expect(data.length).toBeGreaterThan(0);
+  });
 });
