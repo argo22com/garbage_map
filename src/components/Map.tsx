@@ -1,7 +1,7 @@
 import React from "react";
-import { Map as LeafletMap, Marker, TileLayer } from "react-leaflet";
+import { Map as LeafletMap, TileLayer } from "react-leaflet";
 
-export const Map: React.FC = () => {
+export const Map: React.FC = ({ children }) => {
   /*
    * default icon is broken, this is temp (copy-paste) solution
    * source: https://github.com/PaulLeCam/react-leaflet/issues/453#issuecomment-410450387
@@ -25,7 +25,7 @@ export const Map: React.FC = () => {
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={position} />
+      {children}
     </LeafletMap>
   );
 };
