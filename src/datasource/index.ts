@@ -26,3 +26,19 @@ export type Spot = {
   location: Location;
   containers: Container[];
 };
+
+export async function getSpots(): Promise<Spot[]> {
+  return new Promise((resolve, reject) => {
+    resolve([
+      {
+        uid: "123-123-123",
+        address: "dummy data",
+        location: {
+          latitude: 14.123,
+          longitude: 15.345
+        },
+        containers: []
+      }
+    ]);
+  });
+}
