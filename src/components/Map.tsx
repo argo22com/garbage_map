@@ -20,11 +20,7 @@ export const Map: React.FC = () => {
   }, []);
 
   return (
-    <LeafletMap
-      center={position}
-      zoom={13}
-      style={{ width: "100%", height: "100%" }}
-    >
+    <LeafletMap center={position} zoom={13} className="w-screen h-screen">
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
