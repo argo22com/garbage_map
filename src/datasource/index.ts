@@ -29,16 +29,33 @@ export type Spot = {
 
 export async function getSpots(): Promise<Spot[]> {
   return new Promise((resolve, reject) => {
-    resolve([
-      {
-        uid: "123-123-123",
-        address: "dummy data",
+    const spots = require("./generated/spots.json");
+    const containers = require("./generated/trashes.json");
+    const containerMap = new Map<string, Container>(
+      containers.map((rawContainer: any): [string, Container] => {
+        return [
+          rawContainer.uid,
+          {
+            uid: rawContainer.uid,
+            clearDay: rawContainer.clear_day,
+            type: rawContainer.type
+          }
+        ];
+      })
+    );
+
+    const result: Spot[] = spots.map((rawSpot: any) => {
+      return {
+        uid: rawSpot.uid,
+        address: rawSpot.location.address_simple,
         location: {
-          latitude: 14.123,
-          longitude: 15.345
+          latitude: rawSpot.location.location_latitude,
+          longitude: rawSpot.location.location_longitude
         },
-        containers: []
-      }
-    ]);
+        containers: rawSpot.trashes.map((uid: string) => containerMap.get(uid))
+      };
+    });
+
+    resolve(result);
   });
 }
