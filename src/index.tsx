@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "serviceWorker";
+require("react-leaflet-markercluster/dist/styles.min.css");
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

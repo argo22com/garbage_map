@@ -11,12 +11,16 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-leaflet": "^2.5.0",
+    "@types/react-leaflet-markercluster": "^2.0.0",
     "autoprefixer": "^9.7.4",
     "leaflet": "^1.6.0",
+    "leaflet.markercluster": "^1.4.1",
     "postcss-cli": "^7.1.0",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-leaflet": "^2.6.1",
+    "react-leaflet-markercluster": "^2.0.0-rc3",
     "react-scripts": "3.3.1",
     "typescript": "~3.7.2"
   },
@@ -25,7 +29,7 @@
     "build": "yarn build:style && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:style":"tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css"
+    "build:style": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css"
   },
   "eslintConfig": {
     "extends": "react-app"
