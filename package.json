@@ -47,6 +47,8 @@
     ]
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
+    "classnames": "^2.2.6",
     "husky": ">=4",
     "lint-staged": ">=10",
     "prettier": "^1.19.1",
