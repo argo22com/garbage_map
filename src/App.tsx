@@ -31,11 +31,7 @@ const App = () => {
           }}
         >
           {spots.map(item => (
-            <SpotMarker
-            key={item.uid}
-            latitude={item.location.latitude}
-            longitude={item.location.longitude}
-          />
+            <SpotMarker key={item.uid} location={item.location} />
           ))}
         </MarkerClusterGroup>
       </Map>
