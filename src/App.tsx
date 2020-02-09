@@ -18,11 +18,11 @@ const App = () => {
     <div className="w-screen h-screen">
       <Map>
         {/*
-                MarkerClusterGroup
-                forked version used
-                switch on the original after release new MarkerClusterGroup version with merged pull request:
-                https://github.com/YUzhva/react-leaflet-markercluster/pull/86
-                */}
+          MarkerClusterGroup
+          forked version used
+          switch on the original after release new MarkerClusterGroup version with merged pull request:
+          https://github.com/YUzhva/react-leaflet-markercluster/pull/86
+        */}
         <MarkerClusterGroup
           disableClusteringAtZoom={16}
           spiderfyOnMaxZoom={false}
