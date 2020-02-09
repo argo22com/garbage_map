@@ -16,7 +16,7 @@ export type Container = {
   clearDay: string;
 };
 
-type Location = {
+export type Location = {
   latitude: number;
   longitude: number;
 };

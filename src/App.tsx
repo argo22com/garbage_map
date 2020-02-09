@@ -1,8 +1,8 @@
 import { Map } from "components/Map";
+import { SpotMarker } from "components/Markers/SpotMarker";
 import { getSpots, Spot } from "datasource";
 import "leaflet/dist/leaflet.css";
 import React, { useEffect, useState } from "react";
-import { Marker } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 const App = () => {
@@ -31,10 +31,7 @@ const App = () => {
           }}
         >
           {spots.map(item => (
-            <Marker
-              key={item.uid}
-              position={[item.location.latitude, item.location.longitude]}
-            />
+            <SpotMarker key={item.uid} location={item.location} />
           ))}
         </MarkerClusterGroup>
       </Map>
