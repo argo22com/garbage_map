@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.6",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -25,11 +26,12 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "yarn install && yarn build:style && react-scripts start",
-    "build": "yarn build:style && react-scripts build",
+    "start": "yarn install && yarn build:css && react-scripts start",
+    "build": "yarn build:css-optimized && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:style": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css"
+    "build:css": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css",
+    "build:css-optimized": "postcss src/assets/styles/index.css -o src/assets/styles/tailwind.css"
   },
   "eslintConfig": {
     "extends": "react-app"
