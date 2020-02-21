@@ -19,11 +19,10 @@ export const MAP_PROVIDER_DEFAULT: MapProvider = {
 
 export const MAP_PROVIDER_SATELLITE: MapProvider = {
   name: "Esri.WorldImagery",
-  url:
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  url: "https://mapserver.mapy.cz/bing/{z}-{x}-{y}",
   options: {
     maxZoom: 19,
     attribution:
-      "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
+      '<a title="Seznam.cz, a.s., 2020 |  EOX IT Services GmbH |  OpenStreetMap" href="https://o.seznam.cz" target="_blank" rel="noopener">© Seznam.cz, a.s.</a>'
   }
 };
