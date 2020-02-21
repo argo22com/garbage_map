@@ -13,6 +13,7 @@ type Props = {
 };
 
 export const SpotMarker: React.FC<Props> = props => {
+  // Leaflet requires plain html in divIcon, renderToStaticMarkup returns string with plain html
   const SpotIcon: DivIcon = divIcon({
     html: renderToStaticMarkup(
       <>
