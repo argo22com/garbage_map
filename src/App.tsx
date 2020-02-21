@@ -30,8 +30,12 @@ const App = () => {
             color: "#50C8B4" // TODO: replace by value from tailwind
           }}
         >
-          {spots.map(item => (
-            <SpotMarker key={item.uid} location={item.location} />
+          {spots.map(spot => (
+            <SpotMarker
+              key={spot.uid}
+              location={spot.location}
+              containers={spot.containers}
+            />
           ))}
         </MarkerClusterGroup>
       </Map>
