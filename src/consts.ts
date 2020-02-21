@@ -18,7 +18,7 @@ export const MAP_PROVIDER_DEFAULT: MapProvider = {
 };
 
 export const MAP_PROVIDER_SATELLITE: MapProvider = {
-  name: "Esri.WorldImagery",
+  name: "Mapy.cz",
   url: "https://mapserver.mapy.cz/bing/{z}-{x}-{y}",
   options: {
     maxZoom: 19,
