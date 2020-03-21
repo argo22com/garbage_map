@@ -3,7 +3,7 @@ import { Map } from "components/Map";
 import { SpotMarker } from "components/Markers/SpotMarker";
 import { Filters as TFilters, getSpots, Spot } from "datasource";
 import "leaflet/dist/leaflet.css";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 const App = () => {
@@ -18,18 +18,10 @@ const App = () => {
     return;
   }, [filters]);
 
-  const handleChangeFilters = useCallback(setFilters, []);
-
-  useEffect(() => {
-    getSpots().then(spots => {
-      setSpots(spots);
-    });
-  }, []);
-
   return (
     <div className="flex flex-col w-screen h-screen">
       {/* Header*/}
-      <Filters onChange={handleChangeFilters} value={filters} />
+      <Filters onChange={setFilters} value={filters} />
 
       <Map>
         {/*
