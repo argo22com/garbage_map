@@ -1,21 +1,28 @@
+import { Filters } from "components/Filters";
 import { Map } from "components/Map";
 import { SpotMarker } from "components/Markers/SpotMarker";
-import { getSpots, Spot } from "datasource";
+import { Filters as TFilters, getSpots, Spot } from "datasource";
 import "leaflet/dist/leaflet.css";
 import React, { useEffect, useState } from "react";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 
 const App = () => {
   const [spots, setSpots] = useState<Spot[]>([]);
+  const [filters, setFilters] = useState<TFilters>({
+    containerTypes: []
+  });
 
+  /** update spots by filter value */
   useEffect(() => {
-    getSpots().then(spots => {
-      setSpots(spots);
-    });
-  }, []);
+    getSpots(filters).then(setSpots);
+    return;
+  }, [filters]);
 
   return (
-    <div className="w-screen h-screen">
+    <div className="flex flex-col w-screen h-screen">
+      {/* Header*/}
+      <Filters onChange={setFilters} value={filters} />
+
       <Map>
         {/*
           MarkerClusterGroup
