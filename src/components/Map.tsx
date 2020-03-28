@@ -7,7 +7,11 @@ import {
 import React, { useState } from "react";
 import { Map as LeafletMap, TileLayer } from "react-leaflet";
 
-export const Map: React.FC = ({ children }) => {
+type Props = {
+  className?: string;
+};
+
+export const Map: React.FC<Props> = ({ className, children }) => {
   const [mapProvider, setMapProvider] = useState<MapProvider>(
     MAP_PROVIDER_DEFAULT
   );
@@ -33,11 +37,11 @@ export const Map: React.FC = ({ children }) => {
     setMapProvider(provider);
 
   return (
-    <div>
+    <div className={className}>
       <LeafletMap
         center={position}
         zoom={13}
-        className="w-screen h-screen"
+        className="w-full h-full"
         maxZoom={19}
       >
         <TileLayer
