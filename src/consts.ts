@@ -8,12 +8,12 @@ export type MapProvider = {
 };
 
 export const MAP_PROVIDER_DEFAULT: MapProvider = {
-  name: "Wikimedia",
-  url: "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png",
+  name: "Mapy.cz",
+  url: "https://mapserver.mapy.cz/base-m/{z}-{x}-{y}",
   options: {
-    maxZoom: 19,
+    maxZoom: 17,
     attribution:
-      '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>'
+      '<a title="Seznam.cz, a.s., 2020 | OpenStreetMap" href="https://o.seznam.cz" target="_blank" rel="noopener">© Seznam.cz, a.s.</a>'
   }
 };
 
