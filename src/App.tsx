@@ -23,7 +23,7 @@ const App = () => {
       {/* Header*/}
       <Filters onChange={setFilters} value={filters} />
 
-      <Map>
+      <Map className="flex-grow">
         {/*
           MarkerClusterGroup
           forked version used
