@@ -20,7 +20,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-leaflet": "^2.6.1",
+    "react-leaflet": "^2.6.3",
     "react-leaflet-markercluster": "https://github.com/olabalboa/react-leaflet-markercluster",
     "react-scripts": "3.4.1",
     "typescript": "~3.8.3"
