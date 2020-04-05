@@ -9,7 +9,7 @@ type Props = {
   onChange: (provider: MapProvider) => any;
 };
 
-export const MapProviderToggle: React.FC<Props> = props => {
+export const MapProviderToggle: React.FC<Props> = (props) => {
   const [isActiveDefault, setIsActiveDefault] = useState<boolean>(true);
 
   const visibleThumbnail: string = useMemo(
@@ -26,7 +26,7 @@ export const MapProviderToggle: React.FC<Props> = props => {
   );
 
   const handleClick = useCallback(() => setIsActiveDefault(!isActiveDefault), [
-    isActiveDefault
+    isActiveDefault,
   ]);
 
   return (
@@ -36,7 +36,7 @@ export const MapProviderToggle: React.FC<Props> = props => {
         style={{
           width: 60,
           height: 60,
-          backgroundImage: `url('${visibleThumbnail}')`
+          backgroundImage: `url('${visibleThumbnail}')`,
         }}
         onClick={handleClick}
         title="Změnit zobrazení mapy"

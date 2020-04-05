@@ -13,8 +13,8 @@ export const MAP_PROVIDER_DEFAULT: MapProvider = {
   options: {
     maxZoom: 17,
     attribution:
-      '<a title="Seznam.cz, a.s., 2020 | OpenStreetMap" href="https://o.seznam.cz" target="_blank" rel="noopener">© Seznam.cz, a.s.</a>'
-  }
+      '<a title="Seznam.cz, a.s., 2020 | OpenStreetMap" href="https://o.seznam.cz" target="_blank" rel="noopener">© Seznam.cz, a.s.</a>',
+  },
 };
 
 export const MAP_PROVIDER_SATELLITE: MapProvider = {
@@ -23,6 +23,6 @@ export const MAP_PROVIDER_SATELLITE: MapProvider = {
   options: {
     maxZoom: 19,
     attribution:
-      '<a title="Seznam.cz, a.s., 2020 |  EOX IT Services GmbH |  OpenStreetMap" href="https://o.seznam.cz" target="_blank" rel="noopener">© Seznam.cz, a.s.</a>'
-  }
+      '<a title="Seznam.cz, a.s., 2020 |  EOX IT Services GmbH |  OpenStreetMap" href="https://o.seznam.cz" target="_blank" rel="noopener">© Seznam.cz, a.s.</a>',
+  },
 };

@@ -12,14 +12,14 @@ const filtersContainerType = Object.values(ContainerType);
 
 export const Filters: React.FC<Props> = ({ value, onChange }) => {
   const containerTypes = useMemo(() => value.containerTypes || [], [
-    value.containerTypes
+    value.containerTypes,
   ]);
 
   const handleChangeFilterContainerType = useCallback(
     (checked: boolean, filter: ContainerType) => {
       const updated = checked
         ? [...containerTypes, filter]
-        : containerTypes.filter(type => type !== filter);
+        : containerTypes.filter((type) => type !== filter);
 
       onChange({ ...value, containerTypes: updated });
     },

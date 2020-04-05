@@ -14,7 +14,7 @@ import "@testing-library/jest-dom/extend-expect";
  * source: https://stackoverflow.com/a/54384719/2364154
  * */
 const createElementNSOrig = document.createElementNS;
-document.createElementNS = function(
+document.createElementNS = function (
   namespaceURI: string,
   qualifiedName: string
 ) {
@@ -25,7 +25,7 @@ document.createElementNS = function(
     // TODO: solve TS
     // @ts-ignore
     const element = createElementNSOrig.apply(this, arguments);
-    element.createSVGRect = function() {};
+    element.createSVGRect = function () {};
     return element;
   }
   // TODO: solve TS

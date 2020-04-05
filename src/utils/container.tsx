@@ -7,7 +7,7 @@ const containerColors: { [key in ContainerType]: string } = {
   [ContainerType.mixedGlass]: "text-container-glass_mixed",
   [ContainerType.textile]: "text-container-textile",
   [ContainerType.oilsAndFats]: "text-container-oils_edible",
-  [ContainerType.metals]: "text-container-metals"
+  [ContainerType.metals]: "text-container-metals",
 };
 
 export function getContainerColor(type: ContainerType): string {

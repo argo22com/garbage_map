@@ -12,8 +12,8 @@ export async function getMappedData(): Promise<Spot[]> {
         {
           uid: rawContainer.uid,
           clearDay: rawContainer.clear_day,
-          type: rawContainer.type
-        }
+          type: rawContainer.type,
+        },
       ];
     })
   );
@@ -25,9 +25,9 @@ export async function getMappedData(): Promise<Spot[]> {
       address: rawSpot.location.address_simple,
       location: {
         latitude: rawSpot.location.location_latitude,
-        longitude: rawSpot.location.location_longitude
+        longitude: rawSpot.location.location_longitude,
       },
-      containers: rawSpot.trashes.map((uid: string) => containerMap.get(uid))
+      containers: rawSpot.trashes.map((uid: string) => containerMap.get(uid)),
     };
   });
 }

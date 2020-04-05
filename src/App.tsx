@@ -9,7 +9,7 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 const App = () => {
   const [spots, setSpots] = useState<Spot[]>([]);
   const [filters, setFilters] = useState<TFilters>({
-    containerTypes: []
+    containerTypes: [],
   });
 
   /** update spots by filter value */
@@ -34,10 +34,10 @@ const App = () => {
           disableClusteringAtZoom={16}
           spiderfyOnMaxZoom={false}
           polygonOptions={{
-            color: "#50C8B4" // TODO: replace by value from tailwind
+            color: "#50C8B4", // TODO: replace by value from tailwind
           }}
         >
-          {spots.map(spot => (
+          {spots.map((spot) => (
             <SpotMarker
               key={spot.uid}
               location={spot.location}

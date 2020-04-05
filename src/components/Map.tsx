@@ -2,7 +2,7 @@ import { MapProviderToggle } from "components/MapProviderToggle";
 import {
   MAP_PROVIDER_DEFAULT,
   MAP_PROVIDER_SATELLITE,
-  MapProvider
+  MapProvider,
 } from "consts";
 import React, { useState } from "react";
 import { Map as LeafletMap, TileLayer } from "react-leaflet";
@@ -29,7 +29,7 @@ export const Map: React.FC<Props> = ({ className, children }) => {
     L.Icon.Default.mergeOptions({
       iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
       iconUrl: require("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+      shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
     });
   }, []);
 

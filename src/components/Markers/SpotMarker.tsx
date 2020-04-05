@@ -12,7 +12,7 @@ type Props = {
   containers: Container[];
 };
 
-export const SpotMarker: React.FC<Props> = props => {
+export const SpotMarker: React.FC<Props> = (props) => {
   // Leaflet requires plain html in divIcon, renderToStaticMarkup returns string with plain html
   const SpotIcon: DivIcon = divIcon({
     html: renderToStaticMarkup(
@@ -32,7 +32,7 @@ export const SpotMarker: React.FC<Props> = props => {
     ),
     iconSize: [32, 32],
     className:
-      "flex justify-center items-center p-1 rounded-full bg-white shadow cursor-default"
+      "flex justify-center items-center p-1 rounded-full bg-white shadow cursor-default",
   });
 
   return (
