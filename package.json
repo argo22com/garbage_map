@@ -66,5 +66,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "resolutions": {
+    "**/*/minimist": "^1.2.3"
   }
 }
