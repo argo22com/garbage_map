@@ -23,7 +23,7 @@
     "react-leaflet": "^2.6.1",
     "react-leaflet-markercluster": "https://github.com/olabalboa/react-leaflet-markercluster",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "typescript": "~3.8.3"
   },
   "scripts": {
     "start": "yarn install && yarn build:css && react-scripts start",
