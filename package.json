@@ -68,6 +68,12 @@
     ]
   },
   "resolutions": {
-    "**/*/minimist": "^1.2.3"
+    "**/*/minimist": "^1.2.3",
+    "react-scripts/jest/jest-cli/jest-config/jest-environment-jsdom/jsdom/acorn": "^5.7.4",
+    "react-scripts/webpack/acorn": "^6.4.1",
+    "react-scripts/jest-environment-jsdom-fourteen/jsdom/acorn": "^6.4.1",
+    "react-scripts/jest-environment-jsdom-fourteen/jsdom/acorn-globals/acorn": "^6.4.1",
+    "tailwindcss/detective/acorn-node/acorn": "^7.1.1",
+    "react-scripts/eslint/espree/acorn": "^7.1.1"
   }
 }
