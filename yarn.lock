@@ -8850,10 +8850,6 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-"react-leaflet-markercluster@https://github.com/olabalboa/react-leaflet-markercluster":
-  version "2.0.0-rc3"
-  resolved "https://github.com/olabalboa/react-leaflet-markercluster#b69515a73263fbe3bcafbb9b5b4c109af0d057f6"
-
 react-leaflet@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/react-leaflet/-/react-leaflet-2.6.1.tgz#e5d6514d2358c51a28e614b8a0ddf8dca56e7179"
