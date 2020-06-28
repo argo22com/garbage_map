@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { MapProviderToggle } from "components/MapProviderToggle";
 import {
   MAP_PROVIDER_DEFAULT,
@@ -37,7 +38,7 @@ export const Map: React.FC<Props> = ({ className, children }) => {
     setMapProvider(provider);
 
   return (
-    <div className={className}>
+    <div className={classNames("flex flex-col h-full", className)}>
       <LeafletMap
         center={position}
         zoom={13}
