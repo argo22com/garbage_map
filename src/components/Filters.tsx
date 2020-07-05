@@ -53,9 +53,11 @@ const FilterGroupContainerTypes: React.FC<FilterGroupProps<
   return (
     <div className="flex flex-wrap -m-2">
       {containerTypeKeys.map((filter, index) => (
-        <div className="w-1/2 md:w-auto p-2">
+        <div
+          key={`filter-containerType-${index}`}
+          className="w-1/2 md:w-auto p-2"
+        >
           <CheckBox
-            key={`filter-containerType-${index}`}
             value={filter}
             checked={_.activeFilters.includes(filter)}
             onChange={handleChange}
