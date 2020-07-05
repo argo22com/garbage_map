@@ -1,32 +1,37 @@
-import image_provider_default from "assets/images/map_provider-default.jpg";
-import image_provider_satellite from "assets/images/map_provider-satellite.jpg";
 import { MapProvider } from "consts";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useMemo } from "react";
 
 type Props = {
-  providerDefault: MapProvider;
-  providerSatellite: MapProvider;
-  onChange: (provider: MapProvider) => any;
+  providers: MapProvider[];
+  activeProvider: MapProvider;
+  onChange: (provider: MapProvider) => void;
 };
 
-export const MapProviderToggle: React.FC<Props> = props => {
-  const [isActiveDefault, setIsActiveDefault] = useState<boolean>(true);
-
-  const visibleThumbnail: string = useMemo(
-    () => (isActiveDefault ? image_provider_satellite : image_provider_default),
-    [isActiveDefault]
+export const MapProviderToggle: React.FC<Props> = _ => {
+  // TODO: compare by provider ID after ID implementation
+  const indexOfActiveProvider = useMemo<number>(
+    () => _.providers.findIndex(item => item.url === _.activeProvider.url),
+    [_.providers, _.activeProvider]
   );
 
-  useEffect(
-    () =>
-      props.onChange(
-        isActiveDefault ? props.providerDefault : props.providerSatellite
-      ),
-    [isActiveDefault, props]
+  const isActiveProviderLast = useMemo(
+    () => indexOfActiveProvider + 1 >= _.providers.length,
+    [indexOfActiveProvider, _.providers]
   );
 
-  const handleClick = useCallback(() => setIsActiveDefault(!isActiveDefault), [
-    isActiveDefault
+  const indexOfNextProvider = useMemo<number>(
+    () => (isActiveProviderLast ? 0 : indexOfActiveProvider + 1),
+    [indexOfActiveProvider, isActiveProviderLast]
+  );
+
+  const nextProvider = useMemo<MapProvider>(
+    () => _.providers[indexOfNextProvider],
+    [_.providers, indexOfNextProvider]
+  );
+
+  const handleClick = useCallback(() => _.onChange(nextProvider), [
+    nextProvider,
+    _
   ]);
 
   return (
@@ -36,7 +41,7 @@ export const MapProviderToggle: React.FC<Props> = props => {
         style={{
           width: 60,
           height: 60,
-          backgroundImage: `url('${visibleThumbnail}')`
+          backgroundImage: `url('${nextProvider.thumbnail}')`
         }}
         onClick={handleClick}
         title="Změnit zobrazení mapy"
