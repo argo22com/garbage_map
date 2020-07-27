@@ -22,7 +22,7 @@ export const Filters: React.FC<Props> = ({ activeFilters, onChange }) => {
   );
 
   return (
-    <div className="flex flex-col flex-wrap p-2">
+    <div className="p-2">
       <FilterGroupContainerTypes
         activeFilters={activeFilters.containerTypes || []}
         onChange={handleChangeContainerType}
