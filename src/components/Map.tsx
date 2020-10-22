@@ -1,10 +1,6 @@
 import classNames from "classnames";
 import { MapProviderToggle } from "components/MapProviderToggle";
-import {
-  MAP_PROVIDER_DEFAULT,
-  MAP_PROVIDER_SATELLITE,
-  MapProvider
-} from "consts";
+import { MAP_PROVIDERS, MapProvider } from "consts";
 import React, { useState } from "react";
 import { Map as LeafletMap, TileLayer } from "react-leaflet";
 
@@ -12,9 +8,11 @@ type Props = {
   className?: string;
 };
 
+const defaultMapProvider: MapProvider = MAP_PROVIDERS[0];
+
 export const Map: React.FC<Props> = ({ className, children }) => {
   const [mapProvider, setMapProvider] = useState<MapProvider>(
-    MAP_PROVIDER_DEFAULT
+    defaultMapProvider
   );
 
   /*
@@ -57,8 +55,8 @@ export const Map: React.FC<Props> = ({ className, children }) => {
         style={{ zIndex: 400 }}
       >
         <MapProviderToggle
-          providerDefault={MAP_PROVIDER_DEFAULT}
-          providerSatellite={MAP_PROVIDER_SATELLITE}
+          providers={MAP_PROVIDERS}
+          activeProvider={mapProvider}
           onChange={handleChangeProvider}
         />
       </div>

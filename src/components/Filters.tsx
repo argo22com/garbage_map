@@ -1,78 +1,70 @@
-import classNames from "classnames";
+import { CheckBox } from "components/CheckBox";
 import { ContainerType, Filters as TFilters } from "datasource";
-import React, { ChangeEvent, useCallback, useMemo } from "react";
+import React, { useCallback } from "react";
+import { containerTypeKeys, containerTypes } from "utils/container";
 
 type Props = {
-  value: TFilters;
+  activeFilters: TFilters;
   onChange: (filters: TFilters) => void;
 };
 
-/* TODO: change to keys and solve texts */
-const filtersContainerType = Object.values(ContainerType);
+export const Filters: React.FC<Props> = ({ activeFilters, onChange }) => {
+  const handleChange = useCallback(
+    (newFilters: Partial<TFilters>) =>
+      onChange({ ...activeFilters, ...newFilters }),
+    [onChange, activeFilters]
+  );
 
-export const Filters: React.FC<Props> = ({ value, onChange }) => {
-  const containerTypes = useMemo(() => value.containerTypes || [], [
-    value.containerTypes
-  ]);
-
-  const handleChangeFilterContainerType = useCallback(
-    (checked: boolean, filter: ContainerType) => {
-      const updated = checked
-        ? [...containerTypes, filter]
-        : containerTypes.filter(type => type !== filter);
-
-      onChange({ ...value, containerTypes: updated });
-    },
-    [value, onChange, containerTypes]
+  const handleChangeContainerType = useCallback(
+    (newFilters: ContainerType[]) =>
+      handleChange({ containerTypes: newFilters }),
+    [handleChange]
   );
 
   return (
-    <div className="flex">
-      {filtersContainerType.map((filter, index) => (
-        <FilterItem<ContainerType>
-          key={`filter-containerType-${index}`}
-          className={index > 0 ? "ml-5" : ""}
-          value={filter}
-          checked={containerTypes.includes(filter)}
-          onChange={handleChangeFilterContainerType}
-        >
-          {filter}
-        </FilterItem>
-      ))}
+    <div className="p-2">
+      <FilterGroupContainerTypes
+        activeFilters={activeFilters.containerTypes || []}
+        onChange={handleChangeContainerType}
+      />
     </div>
   );
 };
 
-type FilterProp<T> = {
-  className?: string;
-  value: T;
-  checked: boolean;
-  onChange: (checked: boolean, value: T) => void;
-  children?: any;
+type FilterGroupProps<T> = {
+  activeFilters: T[];
+  onChange: (newActiveFilters: T[]) => void;
 };
 
-const FilterItem = <T extends string>(props: FilterProp<T>) => {
+const FilterGroupContainerTypes: React.FC<FilterGroupProps<
+  ContainerType
+>> = _ => {
   const handleChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      return props.onChange(event.currentTarget.checked, props.value);
+    (isActive: boolean, newFilter: ContainerType) => {
+      const newActiveFilters = isActive
+        ? [..._.activeFilters, newFilter]
+        : _.activeFilters.filter(activeFilter => activeFilter !== newFilter);
+
+      _.onChange(newActiveFilters);
     },
-    [props]
+    [_]
   );
 
   return (
-    <label
-      className={classNames(
-        "flex items-center cursor-pointer",
-        props.className
-      )}
-    >
-      <input
-        type="checkbox"
-        value={props.value}
-        onChange={handleChange}
-        checked={props.checked}
-      />
-      <div className={props.children ? "ml-2" : ""}>{props.children}</div>
-    </label>
+    <div className="flex flex-wrap -m-2">
+      {containerTypeKeys.map((filter, index) => (
+        <div
+          key={`filter-containerType-${index}`}
+          className="w-1/2 md:w-auto p-2"
+        >
+          <CheckBox
+            value={filter}
+            checked={_.activeFilters.includes(filter)}
+            onChange={handleChange}
+            label={containerTypes[filter].name}
+          />
+        </div>
+      ))}
+    </div>
   );
 };

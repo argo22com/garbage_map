@@ -5,14 +5,21 @@ import { IconSpot } from "components/IconSpot";
 import { Filters as TFilters, getSpots, Spot } from "datasource";
 import L, { divIcon } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+
+const defaultFilters: TFilters = {
+  containerTypes: undefined
+};
 
 const App = () => {
   const [spots, setSpots] = useState<Spot[]>([]);
-  const [filters, setFilters] = useState<TFilters>({
-    containerTypes: []
-  });
+  const [filters, setFilters] = useState<TFilters>(defaultFilters);
+
+  const handleChangeFilters = useCallback(
+    (newFilters: TFilters) => setFilters(newFilters),
+    []
+  );
 
   /** get Leaflet Markers from spots */
   const leafletMarkers = useMemo(
@@ -43,9 +50,9 @@ const App = () => {
   return (
     <div className="flex flex-col w-screen h-screen">
       {/* Header*/}
-      <Filters onChange={setFilters} value={filters} />
+      <Filters activeFilters={filters} onChange={handleChangeFilters} />
 
-      <Map className="flex-grow">
+      <Map className={"flex-grow"}>
         <LeafletCluster markers={leafletMarkers} />
       </Map>
     </div>
