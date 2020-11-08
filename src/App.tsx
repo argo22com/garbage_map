@@ -9,7 +9,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 const defaultFilters: TFilters = {
-  containerTypes: undefined
+  containerTypes: undefined,
 };
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
   /** get Leaflet Markers from spots */
   const leafletMarkers = useMemo(
     () =>
-      spots.map(spot =>
+      spots.map((spot) =>
         L.marker(
           new L.LatLng(spot.location.latitude, spot.location.longitude),
           {
@@ -33,8 +33,8 @@ const App = () => {
                 <IconSpot containers={spot.containers} />
               ),
               iconSize: [32, 32],
-              className: ""
-            })
+              className: "",
+            }),
           }
         )
       ),

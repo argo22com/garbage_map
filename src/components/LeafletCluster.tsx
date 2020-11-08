@@ -7,7 +7,7 @@ import { useLeaflet } from "react-leaflet";
 
 const markerClusterGroup = L.markerClusterGroup({
   disableClusteringAtZoom: 17,
-  spiderfyOnMaxZoom: false
+  spiderfyOnMaxZoom: false,
 });
 
 type Props = {
@@ -20,7 +20,7 @@ export const LeafletCluster: React.FC<Props> = ({ markers }) => {
   useEffect(() => {
     markerClusterGroup.clearLayers();
 
-    markers.map(marker => marker.addTo(markerClusterGroup));
+    markers.map((marker) => marker.addTo(markerClusterGroup));
 
     map?.addLayer(markerClusterGroup);
   }, [markers, map]);

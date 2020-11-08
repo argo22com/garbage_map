@@ -7,10 +7,10 @@ type Props = {
   onChange: (provider: MapProvider) => void;
 };
 
-export const MapProviderToggle: React.FC<Props> = _ => {
+export const MapProviderToggle: React.FC<Props> = (_) => {
   // TODO: compare by provider ID after ID implementation
   const indexOfActiveProvider = useMemo<number>(
-    () => _.providers.findIndex(item => item.url === _.activeProvider.url),
+    () => _.providers.findIndex((item) => item.url === _.activeProvider.url),
     [_.providers, _.activeProvider]
   );
 
@@ -31,7 +31,7 @@ export const MapProviderToggle: React.FC<Props> = _ => {
 
   const handleClick = useCallback(() => _.onChange(nextProvider), [
     nextProvider,
-    _
+    _,
   ]);
 
   return (
@@ -41,7 +41,7 @@ export const MapProviderToggle: React.FC<Props> = _ => {
         style={{
           width: 60,
           height: 60,
-          backgroundImage: `url('${nextProvider.thumbnail}')`
+          backgroundImage: `url('${nextProvider.thumbnail}')`,
         }}
         onClick={handleClick}
         title="Změnit zobrazení mapy"
