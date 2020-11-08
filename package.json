@@ -23,7 +23,7 @@
     "typescript": "~4.0.5"
   },
   "scripts": {
-    "start": "yarn install && yarn build:css && react-scripts start",
+    "start": "yarn install && yarn build:css && FAST_REFRESH=true react-scripts start",
     "build": "yarn build:css-optimized && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
