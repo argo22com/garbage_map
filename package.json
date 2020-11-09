@@ -3,34 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^2.0.6",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-leaflet": "^2.5.0",
-    "@types/react-leaflet-markercluster": "^2.0.0",
-    "autoprefixer": "^9.7.4",
-    "leaflet": "^1.6.0",
+    "leaflet": "^1.7.1",
     "leaflet.markercluster": "^1.4.1",
-    "postcss-cli": "^7.1.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-leaflet": "^2.6.1",
-    "react-scripts": "3.3.1",
-    "typescript": "~3.7.2"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-leaflet": "^3.0.2",
+    "react-scripts": "4.0.0"
   },
   "scripts": {
-    "start": "yarn install && yarn build:css && react-scripts start",
+    "start": "yarn install && yarn build:css && FAST_REFRESH=true react-scripts start",
     "build": "yarn build:css-optimized && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css",
-    "build:css-optimized": "postcss src/assets/styles/index.css -o src/assets/styles/tailwind.css"
+    "build:css-optimized": "PURGE_CSS=true yarn build:css"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,12 +34,22 @@
     ]
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.9",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.1",
+    "@testing-library/user-event": "^12.2.0",
+    "@types/classnames": "^2.2.11",
+    "@types/jest": "^26.0.15",
+    "@types/leaflet.markercluster": "^1.4.3",
+    "@types/node": "^14.14.6",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "autoprefixer": "^10.0.1",
     "classnames": "^2.2.6",
-    "husky": ">=4",
-    "lint-staged": ">=10",
-    "prettier": "^1.19.1",
-    "tailwindcss": "^1.2.0"
+    "husky": ">=4.3.0",
+    "lint-staged": ">=10.5.1",
+    "prettier": "^2.1.2",
+    "tailwindcss": "^1.9.6",
+    "typescript": "~4.0.5"
   },
   "husky": {
     "hooks": {

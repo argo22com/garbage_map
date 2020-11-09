@@ -1,8 +1,11 @@
 import classNames from "classnames";
 import { MapProviderToggle } from "components/MapProviderToggle";
+import { TileLayer } from "components/TileLayer";
 import { MAP_PROVIDERS, MapProvider } from "consts";
 import React, { useState } from "react";
-import { Map as LeafletMap, TileLayer } from "react-leaflet";
+import { MapContainer } from "react-leaflet";
+
+const L = require("leaflet");
 
 type Props = {
   className?: string;
@@ -21,34 +24,26 @@ export const Map: React.FC<Props> = ({ className, children }) => {
    * issue: https://github.com/PaulLeCam/react-leaflet/issues/453
    * */
   React.useEffect(() => {
-    const L = require("leaflet");
-
     delete L.Icon.Default.prototype._getIconUrl;
 
     L.Icon.Default.mergeOptions({
       iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
       iconUrl: require("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+      shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
     });
   }, []);
 
-  const handleChangeProvider = (provider: MapProvider) =>
+  const handleChangeProvider = (provider: MapProvider) => {
     setMapProvider(provider);
+  };
 
   return (
     <div className={classNames("flex flex-col h-full", className)}>
-      <LeafletMap
-        center={position}
-        zoom={13}
-        className="w-full h-full"
-        maxZoom={19}
-      >
-        <TileLayer
-          attribution={mapProvider.options.attribution}
-          url={mapProvider.url}
-        />
+      <MapContainer center={position} zoom={13} className="w-full h-full">
+        <TileLayer provider={mapProvider} />
+
         {children}
-      </LeafletMap>
+      </MapContainer>
       <div
         className="absolute bottom-0 left-0 m-2"
         // TODO: replace via className

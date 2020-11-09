@@ -36,14 +36,14 @@ type FilterGroupProps<T> = {
   onChange: (newActiveFilters: T[]) => void;
 };
 
-const FilterGroupContainerTypes: React.FC<FilterGroupProps<
-  ContainerType
->> = _ => {
+const FilterGroupContainerTypes: React.FC<FilterGroupProps<ContainerType>> = (
+  _
+) => {
   const handleChange = useCallback(
     (isActive: boolean, newFilter: ContainerType) => {
       const newActiveFilters = isActive
         ? [..._.activeFilters, newFilter]
-        : _.activeFilters.filter(activeFilter => activeFilter !== newFilter);
+        : _.activeFilters.filter((activeFilter) => activeFilter !== newFilter);
 
       _.onChange(newActiveFilters);
     },

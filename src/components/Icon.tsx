@@ -3,7 +3,7 @@ import { ReactComponent as IconTrash } from "assets/images/icons/trash.svg";
 import classNames from "classnames";
 
 const icons = {
-  trash: IconTrash
+  trash: IconTrash,
 };
 
 export type IconType = keyof typeof icons;

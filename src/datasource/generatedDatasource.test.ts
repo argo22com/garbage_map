@@ -10,11 +10,11 @@ test("properly maps spots and containers", () => {
         location_latitude: 49.005944075539205,
         location_longitude: 14.476660503581881,
         location_origin_x: 1162728.497,
-        location_origin_y: 755191.194
+        location_origin_y: 755191.194,
       },
       trashes: ["t1", "t2"],
-      uid: "0cbcb8b2-7de5-4603-bc9a-da5b699d9172"
-    }
+      uid: "0cbcb8b2-7de5-4603-bc9a-da5b699d9172",
+    },
   ]);
   // mock trashes - we don't care about actual data, but about the structure, which has to remain the same
   jest.mock("./generated/trashes.json", () => [
@@ -24,7 +24,7 @@ test("properly maps spots and containers", () => {
       clear_frequency: "1 x týdně",
       mark: "0cbcb8b2-7de5-4603-bc9a-da5b699d9172",
       type: "Papír",
-      uid: "t1"
+      uid: "t1",
     },
 
     {
@@ -33,8 +33,8 @@ test("properly maps spots and containers", () => {
       clear_frequency: "2 x týdně",
       mark: "0cbcb8b2-7de5-4603-bc9a-da5b699d9172",
       type: "Kovy",
-      uid: "t2"
-    }
+      uid: "t2",
+    },
   ]);
-  getMappedData().then(data => expect(data).toMatchSnapshot());
+  getMappedData().then((data) => expect(data).toMatchSnapshot());
 });

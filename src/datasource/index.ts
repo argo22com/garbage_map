@@ -7,7 +7,7 @@ export enum ContainerType {
   textile = "Textil",
   oilsAndFats = "Jedlé oleje a tuky",
   clearGlass = "Bílé sklo",
-  metals = "Kovy"
+  metals = "Kovy",
 }
 
 export type Container = {
@@ -38,9 +38,9 @@ export type Filters = {
 function applyFilters(filters: Filters, spots: Spot[]) {
   const containerTypes = filters.containerTypes;
   if (containerTypes) {
-    spots = spots.filter(spot =>
-      containerTypes.every(type =>
-        spot.containers.find(container => container.type === type)
+    spots = spots.filter((spot) =>
+      containerTypes.every((type) =>
+        spot.containers.find((container) => container.type === type)
       )
     );
   }
