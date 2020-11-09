@@ -3,7 +3,7 @@ import { LeafletCluster } from "components/LeafletCluster";
 import { Map } from "components/Map";
 import { IconSpot } from "components/IconSpot";
 import { Filters as TFilters, getSpots, Spot } from "datasource";
-import L, { divIcon } from "leaflet";
+import L, { divIcon, Marker } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -22,7 +22,7 @@ const App = () => {
   );
 
   /** get Leaflet Markers from spots */
-  const leafletMarkers = useMemo(
+  const leafletMarkers = useMemo<Marker[]>(
     () =>
       spots.map((spot) =>
         L.marker(

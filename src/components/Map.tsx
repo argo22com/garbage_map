@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { MapProviderToggle } from "components/MapProviderToggle";
 import { MAP_PROVIDERS, MapProvider } from "consts";
 import React, { useState } from "react";
-import { Map as LeafletMap, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 
 type Props = {
   className?: string;
@@ -37,7 +37,7 @@ export const Map: React.FC<Props> = ({ className, children }) => {
 
   return (
     <div className={classNames("flex flex-col h-full", className)}>
-      <LeafletMap
+      <MapContainer
         center={position}
         zoom={13}
         className="w-full h-full"
@@ -48,7 +48,7 @@ export const Map: React.FC<Props> = ({ className, children }) => {
           url={mapProvider.url}
         />
         {children}
-      </LeafletMap>
+      </MapContainer>
       <div
         className="absolute bottom-0 left-0 m-2"
         // TODO: replace via className

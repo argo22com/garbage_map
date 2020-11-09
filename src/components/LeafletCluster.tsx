@@ -3,7 +3,7 @@ import "leaflet.markercluster/dist/leaflet.markercluster";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import React, { useEffect } from "react";
-import { useLeaflet } from "react-leaflet";
+import { useMap } from "react-leaflet";
 
 const markerClusterGroup = L.markerClusterGroup({
   disableClusteringAtZoom: 17,
@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const LeafletCluster: React.FC<Props> = ({ markers }) => {
-  const { map } = useLeaflet();
+  const map = useMap();
 
   useEffect(() => {
     markerClusterGroup.clearLayers();
