@@ -3,10 +3,14 @@
     "config:js-app",
     "group:jsTestMonMajor"
   ],
-  "separateMinorPatch": true,
   "packageRules": [
     {
-      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
       "automerge": true
     }
   ],
