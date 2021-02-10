@@ -1,7 +1,13 @@
 {
   "extends": [
     "config:js-app",
-    "group:recommended",
     "group:jsTestMonMajor"
-  ]
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "automerge": true
+    }
+  ],
+  "stabilityDays": 3
 }
