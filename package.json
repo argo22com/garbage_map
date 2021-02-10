@@ -49,7 +49,7 @@
     "lint-staged": "10.5.1",
     "prettier": "2.1.2",
     "tailwindcss": "1.9.6",
-    "typescript": "4.0.5"
+    "typescript": "4.0.6"
   },
   "husky": {
     "hooks": {
