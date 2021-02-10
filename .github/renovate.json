@@ -15,5 +15,6 @@
     }
   ],
   "prHourlyLimit": 0,
-  "stabilityDays": 3
+  "stabilityDays": 3,
+  "masterIssue": true
 }
