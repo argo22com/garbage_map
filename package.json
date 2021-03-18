@@ -38,7 +38,7 @@
     "@testing-library/react": "11.2.5",
     "@testing-library/user-event": "12.8.3",
     "@types/classnames": "2.2.11",
-    "@types/jest": "26.0.20",
+    "@types/jest": "26.0.21",
     "@types/leaflet.markercluster": "1.4.4",
     "@types/node": "14.14.35",
     "@types/react": "16.14.5",
