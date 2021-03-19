@@ -19,4 +19,7 @@ export default defineConfig({
       "leaflet.markercluster/dist/leaflet.markercluster",
     ],
   },
+  build: {
+    outDir: "build",
+  },
 });
