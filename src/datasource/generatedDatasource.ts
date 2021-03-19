@@ -1,9 +1,8 @@
 import { Container, Spot } from "datasource/index";
+import rawSpots from "./generated/spots.json";
+import rawContainers from "./generated/trashes.json";
 
 export async function getMappedData(): Promise<Spot[]> {
-  const rawSpots = require("./generated/spots.json");
-  const rawContainers = require("./generated/trashes.json");
-
   // map raw containers json to correct type
   const containerMap = new Map<string, Container>(
     rawContainers.map((rawContainer: any): [string, Container] => {

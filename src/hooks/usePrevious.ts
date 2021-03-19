@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 // source: https://usehooks.com/usePrevious/
-export function usePrevious<T extends any>(value: T) {
+export function usePrevious<T>(value: T): T | undefined {
   // The ref object is a generic container whose current property is mutable ...
   // ... and can hold any value, similar to an instance property on a class
   const ref = useRef<T>();

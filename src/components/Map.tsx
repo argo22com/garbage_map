@@ -1,19 +1,15 @@
-import classNames from "classnames";
 import { MapProviderToggle } from "components/MapProviderToggle";
 import { TileLayer } from "components/TileLayer";
 import { MAP_PROVIDERS, MapProvider } from "consts";
-import React, { useState } from "react";
+import React, { HTMLAttributes, useState } from "react";
 import { MapContainer } from "react-leaflet";
+import classNames from "classnames";
 
-const L = require("leaflet");
-
-type Props = {
-  className?: string;
-};
+type Props = HTMLAttributes<HTMLDivElement>;
 
 const defaultMapProvider: MapProvider = MAP_PROVIDERS[0];
 
-export const Map: React.FC<Props> = ({ className, children }) => {
+export const Map = ({ className, children }: Props): JSX.Element => {
   const [mapProvider, setMapProvider] = useState<MapProvider>(
     defaultMapProvider
   );
@@ -23,15 +19,15 @@ export const Map: React.FC<Props> = ({ className, children }) => {
    * source: https://github.com/PaulLeCam/react-leaflet/issues/453#issuecomment-410450387
    * issue: https://github.com/PaulLeCam/react-leaflet/issues/453
    * */
-  React.useEffect(() => {
-    delete L.Icon.Default.prototype._getIconUrl;
+  /*React.useEffect(() => {
+      delete Icon.Default.prototype._getIconUrl;
 
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-      iconUrl: require("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-    });
-  }, []);
+      L.Icon.Default.mergeOptions({
+        iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+        iconUrl: require("leaflet/dist/images/marker-icon.png"),
+        shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+      });
+    }, []);*/
 
   const handleChangeProvider = (provider: MapProvider) => {
     setMapProvider(provider);

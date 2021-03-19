@@ -8,7 +8,7 @@ type Props = {
   containers: Container[];
 };
 
-export const IconSpot: React.FC<Props> = ({ containers }) => {
+export const IconSpot = ({ containers }: Props): JSX.Element => {
   return (
     <div className="w-full h-full flex justify-center items-center p-1 rounded-full bg-white shadow cursor-default">
       {containers.map((container, index) => (

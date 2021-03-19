@@ -8,7 +8,7 @@ type Props = {
   onChange: (filters: TFilters) => void;
 };
 
-export const Filters: React.FC<Props> = ({ activeFilters, onChange }) => {
+export const Filters = ({ activeFilters, onChange }: Props): JSX.Element => {
   const handleChange = useCallback(
     (newFilters: Partial<TFilters>) =>
       onChange({ ...activeFilters, ...newFilters }),
@@ -36,9 +36,9 @@ type FilterGroupProps<T> = {
   onChange: (newActiveFilters: T[]) => void;
 };
 
-const FilterGroupContainerTypes: React.FC<FilterGroupProps<ContainerType>> = (
-  _
-) => {
+const FilterGroupContainerTypes = (
+  _: FilterGroupProps<ContainerType>
+): JSX.Element => {
   const handleChange = useCallback(
     (isActive: boolean, newFilter: ContainerType) => {
       const newActiveFilters = isActive

@@ -2,24 +2,47 @@
   "name": "garbage_map",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "leaflet": "1.7.1",
-    "leaflet.markercluster": "1.5.0",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
-    "react-leaflet": "3.1.0",
-    "react-scripts": "4.0.3"
-  },
   "scripts": {
-    "start": "yarn install && yarn build:css && FAST_REFRESH=true react-scripts start",
-    "build": "yarn build:css-optimized && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "dev": "yarn install && yarn build:css && vite",
+    "prebuild": "yarn build:css-optimized",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
     "build:css": "tailwind build src/assets/styles/index.css -o src/assets/styles/tailwind.css",
     "build:css-optimized": "PURGE_CSS=true yarn build:css"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "leaflet": "^1.7.1",
+    "leaflet.markercluster": "^1.4.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-leaflet": "^3.1.0"
+  },
+  "devDependencies": {
+    "@ehutch79/vite-eslint": "^0.0.1",
+    "@rollup/plugin-eslint": "^8.0.1",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@types/classnames": "^2.2.11",
+    "@types/jest": "^26.0.20",
+    "@types/leaflet": "^1.5.23",
+    "@types/leaflet.markercluster": "^1.4.3",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "@vitejs/plugin-react-refresh": "^1.1.0",
+    "autoprefixer": "^10.2.4",
+    "classnames": "^2.2.6",
+    "eslint": "^7.20.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "tailwindcss": "^2.0.4",
+    "typescript": "^4.1.5",
+    "vite": "^2.1.2",
+    "vite-plugin-svgr": "^0.2.0",
+    "vite-tsconfig-paths": "^2.3.0"
   },
   "browserslist": {
     "production": [
@@ -32,24 +55,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "5.11.9",
-    "@testing-library/react": "11.2.5",
-    "@testing-library/user-event": "12.8.3",
-    "@types/classnames": "2.2.11",
-    "@types/jest": "26.0.21",
-    "@types/leaflet.markercluster": "1.4.4",
-    "@types/node": "14.14.35",
-    "@types/react": "16.14.5",
-    "@types/react-dom": "16.9.11",
-    "autoprefixer": "10.2.5",
-    "classnames": "2.2.6",
-    "husky": "4.3.8",
-    "lint-staged": "10.5.4",
-    "prettier": "2.2.1",
-    "tailwindcss": "1.9.6",
-    "typescript": "4.2.3"
   },
   "husky": {
     "hooks": {
