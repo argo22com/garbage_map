@@ -1,4 +1,4 @@
-import { getMappedData } from "datasource/generatedDatasource";
+import { getMappedData } from "./generatedDatasource";
 
 export enum ContainerType {
   paper = "Papír",
