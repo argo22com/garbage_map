@@ -1,23 +1,21 @@
 import { MapProvider } from "consts";
 import { usePrevious } from "hooks/usePrevious";
-import { Layer } from "leaflet";
-import React, { useEffect, useMemo } from "react";
+import { Layer, tileLayer } from "leaflet";
+import { useEffect, useMemo } from "react";
 import { useMap } from "react-leaflet";
-
-const L = require("leaflet");
 
 type TileLayerProps = {
   provider: MapProvider;
 };
 
-export const TileLayer: React.FC<TileLayerProps> = ({ provider }) => {
+export const TileLayer = ({ provider }: TileLayerProps): null => {
   const map = useMap();
   const previousProvider = usePrevious(provider);
 
   const previousLayer = useMemo<Layer | undefined>(
     () =>
       previousProvider &&
-      L.tileLayer(previousProvider.url, {
+      tileLayer(previousProvider.url, {
         id: previousProvider.url,
         attribution: previousProvider.options.attribution,
         maxZoom: previousProvider.options.maxZoom,
@@ -27,7 +25,7 @@ export const TileLayer: React.FC<TileLayerProps> = ({ provider }) => {
 
   const newLayer = useMemo<Layer>(
     () =>
-      L.tileLayer(provider.url, {
+      tileLayer(provider.url, {
         id: provider.url,
         attribution: provider.options.attribution,
         maxZoom: provider.options.maxZoom,

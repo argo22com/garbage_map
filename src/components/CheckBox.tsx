@@ -10,7 +10,7 @@ type Props<T> = {
   label?: ReactNode;
 };
 
-export const CheckBox = <T extends ReactText>(_: Props<T>) => {
+export const CheckBox = <T extends ReactText>(_: Props<T>): JSX.Element => {
   const handleChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) =>
       _.onChange(event.currentTarget.checked, _.value),

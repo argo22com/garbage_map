@@ -1,4 +1,4 @@
-import { getMappedData } from "datasource/generatedDatasource";
+import { getMappedData } from "./generatedDatasource";
 
 export enum ContainerType {
   paper = "Papír",
@@ -47,12 +47,10 @@ function applyFilters(filters: Filters, spots: Spot[]) {
   return spots;
 }
 
-export function getSpots(filters: Filters = {}): Promise<Spot[]> {
-  return new Promise(async (resolve, reject) => {
-    // TODO: implement datasource selection once we need it
-    let spots = await getMappedData();
-    spots = applyFilters(filters, spots);
+export async function getSpots(filters: Filters = {}): Promise<Spot[]> {
+  // TODO: implement datasource selection once we need it
+  let spots = await getMappedData();
+  spots = applyFilters(filters, spots);
 
-    resolve(spots);
-  });
+  return spots;
 }

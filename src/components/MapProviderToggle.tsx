@@ -7,7 +7,7 @@ type Props = {
   onChange: (provider: MapProvider) => void;
 };
 
-export const MapProviderToggle: React.FC<Props> = (_) => {
+export const MapProviderToggle = (_: Props): JSX.Element => {
   // TODO: compare by provider ID after ID implementation
   const indexOfActiveProvider = useMemo<number>(
     () => _.providers.findIndex((item) => item.url === _.activeProvider.url),

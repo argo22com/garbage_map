@@ -1,4 +1,4 @@
-import { ContainerType, getSpots } from "datasource/index";
+import { ContainerType, getSpots } from "./index";
 
 test("getSpots returns non-empty list", () => {
   getSpots().then((data) => {

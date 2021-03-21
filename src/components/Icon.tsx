@@ -20,7 +20,7 @@ type Props = {
  *
  * example of usage: <Icon type={"trash"} className="h-10 text-red-500" />
  * */
-export const Icon: React.FC<Props> = ({ type, className, style }) => {
+export const Icon = ({ type, className, style }: Props): JSX.Element => {
   const Icon = icons[type];
   return (
     <Icon className={classNames("fill-current", className)} style={style} />
