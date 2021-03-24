@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
-    "@babel/preset-env": "7.13.10",
+    "@babel/preset-env": "7.13.12",
     "@babel/preset-typescript": "7.13.0",
     "@ehutch79/vite-eslint": "0.0.1",
     "@rollup/plugin-eslint": "8.0.1",
