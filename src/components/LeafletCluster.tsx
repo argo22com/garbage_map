@@ -11,7 +11,6 @@ import { useMap } from "react-leaflet";
 const L = window["L"];
 
 // TODO: try replace leaflet.markercluster by https://github.com/akursat/react-leaflet-cluster
-// @ts-expect-error: There's issues with TS definitions of the leaflet and leaflet.markercluster.
 const clusterGroup = L.markerClusterGroup({
   disableClusteringAtZoom: 17,
   spiderfyOnMaxZoom: false,
