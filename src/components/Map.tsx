@@ -42,7 +42,7 @@ export const Map = ({ className, children }: Props): JSX.Element => {
       <div
         className="absolute bottom-0 left-0 m-2"
         // TODO: replace via className
-        style={{ zIndex: 400 }}
+        style={{ zIndex: 1000 }} // zIndex must be bigger than leaflet attribution (999)
       >
         <MapProviderToggle
           providers={MAP_PROVIDERS}
