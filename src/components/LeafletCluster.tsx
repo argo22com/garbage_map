@@ -10,7 +10,9 @@ import { useMap } from "react-leaflet";
 // source: https://github.com/Leaflet/Leaflet.markercluster/issues/725#issuecomment-405752647
 const L = window["L"];
 
-// TODO: try replace leaflet.markercluster by https://github.com/akursat/react-leaflet-cluster
+// TODO: try replace leaflet.markercluster by https://github.com/akursat/react-leaflet-cluster and solve ts-ignore
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: leaflet types doesn't work properly
 const clusterGroup = L.markerClusterGroup({
   disableClusteringAtZoom: 17,
   spiderfyOnMaxZoom: false,
