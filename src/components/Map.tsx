@@ -1,7 +1,7 @@
 import { MapProviderToggle } from "components/MapProviderToggle";
 import { TileLayer } from "components/TileLayer";
 import { MAP_PROVIDERS, MapProvider } from "consts";
-import React, { HTMLAttributes, useState } from "react";
+import { HTMLAttributes, useState } from "react";
 import { MapContainer } from "react-leaflet";
 import classNames from "classnames";
 

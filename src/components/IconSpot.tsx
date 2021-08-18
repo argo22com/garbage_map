@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { Icon } from "components/Icon";
 import { Container } from "datasource";
-import React from "react";
 import { containerTypes } from "utils/container";
 
 type Props = {
