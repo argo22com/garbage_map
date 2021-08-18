@@ -1,14 +1,9 @@
 module.exports = {
+  // doc: https://tailwindcss.com/docs/just-in-time-mode
+  mode: 'jit',
   // doc: https://tailwindcss.com/docs/controlling-file-size
   purge: {
-    enabled: process.env.PURGE_CSS === "true",
-    content: ["./src/**/*.tsx", "./src/**/*.ts", "./src/**/*.js"]
-  },
-  future: {
-    // doc: https://tailwindcss.com/docs/upcoming-changes#remove-deprecated-gap-utilities
-    removeDeprecatedGapUtilities: true,
-    // doc: https://tailwindcss.com/docs/upcoming-changes#purge-layers-by-default
-    purgeLayersByDefault: true
+    content: ["./index.html","./src/**/*.tsx", "./src/**/*.ts", "./src/**/*.js"]
   },
   theme: {
     extend: {
