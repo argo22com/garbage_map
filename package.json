@@ -4,11 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "yarn install && yarn build:css && vite",
-    "prebuild": "yarn build:css-optimized",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "build:css": "tailwind build -i src/assets/styles/index.css -o src/assets/styles/tailwind.css",
-    "build:css-optimized": "PURGE_CSS=true yarn build:css",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
