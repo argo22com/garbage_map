@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import { CSSProperties } from "react";
 import { ReactComponent as IconTrash } from "assets/images/icons/trash.svg";
 import classNames from "classnames";
 

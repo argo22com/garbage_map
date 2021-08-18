@@ -4,7 +4,7 @@ import { Map } from "components/Map";
 import { IconSpot } from "components/IconSpot";
 import { Filters as TFilters, getSpots, Spot } from "datasource";
 import { marker, divIcon, Marker, LatLng } from "leaflet";
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
+import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 const defaultFilters: TFilters = {

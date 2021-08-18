@@ -1,5 +1,5 @@
 import { MapProvider } from "consts";
-import React, { useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 type Props = {
   providers: MapProvider[];
@@ -29,10 +29,10 @@ export const MapProviderToggle = (_: Props): JSX.Element => {
     [_.providers, indexOfNextProvider]
   );
 
-  const handleClick = useCallback(() => _.onChange(nextProvider), [
-    nextProvider,
-    _,
-  ]);
+  const handleClick = useCallback(
+    () => _.onChange(nextProvider),
+    [nextProvider, _]
+  );
 
   return (
     <div className={"rounded cursor-pointer overflow-hidden"}>

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { ChangeEvent, ReactNode, ReactText, useCallback } from "react";
+import { ChangeEvent, ReactNode, ReactText, useCallback } from "react";
 
 type Props<T> = {
   value: T;
