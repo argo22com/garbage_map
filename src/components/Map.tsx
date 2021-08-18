@@ -10,9 +10,8 @@ type Props = HTMLAttributes<HTMLDivElement>;
 const defaultMapProvider: MapProvider = MAP_PROVIDERS[0];
 
 export const Map = ({ className, children }: Props): JSX.Element => {
-  const [mapProvider, setMapProvider] = useState<MapProvider>(
-    defaultMapProvider
-  );
+  const [mapProvider, setMapProvider] =
+    useState<MapProvider>(defaultMapProvider);
 
   /*
    * default icon is broken, this is temp (copy-paste) solution
