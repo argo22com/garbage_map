@@ -1878,10 +1878,17 @@
   dependencies:
     "@types/leaflet" "*"
 
-"@types/leaflet@*", "@types/leaflet@1.7.1":
+"@types/leaflet@*":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.7.1.tgz#6128b27ee3ec9eb2d130705044ed2a5e8291c709"
   integrity sha512-Wi51IivrMUsBkcAc2spSnFnlJ6oMpAXC/bCUd/Jtzy/sww1A8xtsmLYj6vxnc2kgC53PyC2g4gduWv3esNxWig==
+  dependencies:
+    "@types/geojson" "*"
+
+"@types/leaflet@1.7.4":
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.7.4.tgz#bb9430f69d588ca5829c1ba82657e179454f93a1"
+  integrity sha512-a3qYlMwJ62+WRoiDmYODUD4KywA14jP2XohAkAWtELGuMAD3MohZa/MmIvQDqF52xNI9OYaY8BMsL+9z7yf2HQ==
   dependencies:
     "@types/geojson" "*"
 
