@@ -23,14 +23,14 @@ const MAP_PROVIDER_DEFAULT: MapProvider = {
 };
 
 const MAP_PROVIDER_SATELLITE: MapProvider = {
-  name: "Mapy.cz",
-  url: "https://mapserver.mapy.cz/bing/{z}-{x}-{y}",
+  name: "Esri",
+  url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
   options: {
-    maxZoom: 19,
+    maxZoom: 17,
     attribution:
-      '<a title="Seznam.cz, a.s., 2020 |  EOX IT Services GmbH |  OpenStreetMap" href="https://o.seznam.cz" target="_blank" rel="noopener">© Seznam.cz, a.s.</a>',
+      "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
   },
-  thumbnail: Image_MapProvider_SeznamSatellite,
+  thumbnail: Image_MapProvider_SeznamSatellite, // TODO: replace by esri thumbnail
 };
 
 export const MAP_PROVIDERS: MapProvider[] = [
