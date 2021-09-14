@@ -4,6 +4,12 @@ module.exports = {
     browser: true,
     es2021: true,
   },
+  // https://github.com/yannickcr/eslint-plugin-react/issues/1955
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
