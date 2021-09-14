@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 import { ReactComponent as IconTrash } from "assets/images/icons/trash.svg";
-import classNames from "classnames";
+import clsx from "clsx";
 
 const icons = {
   trash: IconTrash,
@@ -22,7 +22,5 @@ type Props = {
  * */
 export const Icon = ({ type, className, style }: Props): JSX.Element => {
   const Icon = icons[type];
-  return (
-    <Icon className={classNames("fill-current", className)} style={style} />
-  );
+  return <Icon className={clsx("fill-current", className)} style={style} />;
 };

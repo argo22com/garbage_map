@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { Icon } from "components/Icon";
 import { Container } from "datasource";
 import { containerTypes } from "utils/container";
@@ -18,7 +18,7 @@ export const IconSpot = ({ containers }: Props): JSX.Element => {
         >
           <Icon
             type={"trash"}
-            className={classNames("w-2", containerTypes[container.type].color)}
+            className={clsx("w-2", containerTypes[container.type].color)}
           />
         </div>
       ))}

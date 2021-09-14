@@ -3,7 +3,7 @@ import { TileLayer } from "components/TileLayer";
 import { MAP_PROVIDERS, MapProvider } from "consts";
 import { HTMLAttributes, useState } from "react";
 import { MapContainer } from "react-leaflet";
-import classNames from "classnames";
+import clsx from "clsx";
 
 type Props = HTMLAttributes<HTMLDivElement>;
 
@@ -33,7 +33,7 @@ export const Map = ({ className, children }: Props): JSX.Element => {
   };
 
   return (
-    <div className={classNames("flex flex-col h-full", className)}>
+    <div className={clsx("flex flex-col h-full", className)}>
       <MapContainer center={position} zoom={13} className="w-full h-full">
         <TileLayer provider={mapProvider} />
 

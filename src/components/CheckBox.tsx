@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { ChangeEvent, ReactNode, ReactText, useCallback } from "react";
 
 type Props<T> = {
@@ -18,9 +18,7 @@ export const CheckBox = <T extends ReactText>(_: Props<T>): JSX.Element => {
   );
 
   return (
-    <label
-      className={classNames("flex items-center cursor-pointer", _.className)}
-    >
+    <label className={clsx("flex items-center cursor-pointer", _.className)}>
       <input
         type="checkbox"
         onChange={handleChange}
