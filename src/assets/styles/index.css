@@ -1,9 +1,15 @@
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 
 /* START - custom styles */
+@layer utilities {
+    @supports (-webkit-touch-callout: none) {
+        .h-screen-safari-fix {
+            /* The hack for Safari */
+            height: -webkit-fill-available;
+        }
+    }
+}
 
 /* END - custom styles */
 
