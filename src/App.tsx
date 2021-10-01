@@ -44,7 +44,7 @@ const App: FC = () => {
   }, [filters]);
 
   return (
-    <div className="flex flex-col w-screen h-screen">
+    <div className="flex flex-col w-screen h-screen h-screen-safari-fix">
       {/* Header*/}
       <Filters activeFilters={filters} onChange={handleChangeFilters} />
 
