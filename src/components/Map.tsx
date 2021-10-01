@@ -33,8 +33,8 @@ export const Map = ({ className, children }: Props): JSX.Element => {
   };
 
   return (
-    <div className={clsx("flex flex-col h-full", className)}>
-      <MapContainer center={position} zoom={13} className="w-full h-full">
+    <div className={clsx("relative flex flex-col", className)}>
+      <MapContainer center={position} zoom={13} className="flex-grow">
         <TileLayer provider={mapProvider} />
 
         {children}
