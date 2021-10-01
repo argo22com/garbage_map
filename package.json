@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn install && vite",
+    "dev": "pnpm install && vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
