@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { Icon } from "components/Icon";
-import { Container } from "datasource";
+import { Container } from "datasource/types";
 import { containerTypes } from "utils/container";
 
 type Props = {

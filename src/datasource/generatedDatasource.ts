@@ -1,35 +1,50 @@
-import { Container, ContainerType, Spot } from "datasource/index";
-import rawSpots from "./generated/spots.json";
-import rawContainers from "./generated/trashes.json";
+import { ContainerType, Spot } from "datasource/types";
+import fccFeatures from "./generated/fcc.json";
+
+const ctype = ContainerType;
+const typeMap = {
+  plasty: ctype.plastic,
+  "sklo barevné": ContainerType.mixedGlass,
+  papír: ContainerType.paper,
+  textil: ContainerType.textile,
+  "sklo bílé": ContainerType.clearGlass,
+  "tuky/oleje": ContainerType.oilsAndFats,
+  kovy: ContainerType.metals,
+};
 
 export async function getMappedData(): Promise<Spot[]> {
-  // map raw containers json to correct type
-  const containerMap = new Map<string, Container>(
-    rawContainers.map((rawContainer) => {
-      return [
-        rawContainer.uid,
-        {
-          uid: rawContainer.uid,
-          clearDay: rawContainer.clear_day,
-          type: rawContainer.type as ContainerType,
-        },
-      ];
-    })
-  );
+  const spots: Map<string, Spot> = new Map();
 
-  // map raw spots json to correct type
-  return rawSpots.map((rawSpot) => {
-    return {
-      uid: rawSpot.uid,
-      address: rawSpot.location.address_simple,
+  fccFeatures.features.forEach((feature) => {
+    const name = feature.attributes["Stanoviště"];
+    if (!name) {
+      return;
+    }
+
+    const rawType = feature.attributes["Druh_odpadu"] as keyof typeof typeMap;
+    const type = typeMap[rawType];
+    if (!type) {
+      return;
+    }
+
+    const spot: Spot = spots.get(name) || {
+      uid: name,
+      address: name,
       location: {
-        latitude: rawSpot.location.location_latitude,
-        longitude: rawSpot.location.location_longitude,
+        latitude: feature.geometry.y,
+        longitude: feature.geometry.x,
       },
-      containers: rawSpot.trashes
-        .filter((uid) => containerMap.has(uid))
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        .map((uid) => containerMap.get(uid)!),
+      containers: [],
     };
+
+    spot.containers.push({
+      uid: feature.attributes.ObjectId.toString(),
+      type,
+      clearDay: feature.attributes.Den_svozu,
+    });
+
+    spots.set(name, spot);
   });
+
+  return [...spots.values()];
 }
