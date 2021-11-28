@@ -1,5 +1,5 @@
-import { ContainerType, Spot } from "datasource/types";
 import fccFeatures from "./generated/fcc.json";
+import { ContainerType, Spot } from "./types";
 
 const ctype = ContainerType;
 const typeMap = {
