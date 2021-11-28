@@ -27,6 +27,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Data source
 
+Run the following command to fetch updated data from the data source.
+
+```
+yarn update:datasource
+```
+
 The [fcc.json](./src/datasource/generated/fcc.json) file is fetched from the following url:
 
 ```
