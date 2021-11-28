@@ -27,7 +27,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Data source
 
-The [fcc.json](./src/datasource/fss.json) file is fetched from the following url:
+The [fcc.json](./src/datasource/generated/fcc.json) file is fetched from the following url:
 
 ```
 https://services9.arcgis.com/8svDug0pVvBQzXWS/arcgis/rest/services/GB_FCC_STANOVISTE/FeatureServer/0/query
