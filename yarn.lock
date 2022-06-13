@@ -2249,10 +2249,10 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/leaflet.markercluster@1.4.6":
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/@types/leaflet.markercluster/-/leaflet.markercluster-1.4.6.tgz#1159460b374ba5e329cb678d0e427f99dca75be5"
-  integrity sha512-MD+bUDzxHznY0zOlSBUAMNQUGB2+xpJPKrR2MNEoBAAKa3QTKJJySBtCqWyGLvYNNO+Cdyc2c64aF2IFwe4fcQ==
+"@types/leaflet.markercluster@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@types/leaflet.markercluster/-/leaflet.markercluster-1.5.0.tgz#c455e4ae8f238612395cc8de19cc8086db859ce5"
+  integrity sha512-2Qje1CGibdaCZaeCtEycQ/TpX4fsiK81NTmkdHotn0dL/4M1QvmeXiiLAHLnv1GrZBn7DY6mzedBsHmq5REKHA==
   dependencies:
     "@types/leaflet" "*"
 
