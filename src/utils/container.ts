@@ -1,4 +1,4 @@
-import { ContainerType } from "datasource";
+import { ContainerType } from "datasource/types";
 
 export type ContainerTypes = {
   [key in ContainerType]: {

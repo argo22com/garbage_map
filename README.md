@@ -24,3 +24,29 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Data source
+
+Run the following command to fetch updated data from the data source.
+
+```
+yarn update:datasource
+```
+
+The [fcc.json](./src/datasource/generated/fcc.json) file is fetched from the following url:
+
+```
+https://services9.arcgis.com/8svDug0pVvBQzXWS/arcgis/rest/services/GB_FCC_STANOVISTE/FeatureServer/0/query
+?f=json
+&where=1%3D1
+&returnGeometry=true
+&spatialRel=esriSpatialRelIntersects
+&outFields=*
+&maxRecordCountFactor=4
+&outSR=4326
+&resultOffset=0
+&resultRecordCount=8000
+&cacheHint=true
+```
+
+The endpoint was found at the [official map](https://c-budejovice.maps.arcgis.com/apps/webappviewer/index.html?id=e41744713ec44ce786a797a7e5fd8057).

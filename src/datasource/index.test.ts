@@ -1,4 +1,5 @@
-import { ContainerType, getSpots } from "./index";
+import { getSpots } from "./index";
+import { ContainerType } from "./types";
 
 test("getSpots returns non-empty list", () => {
   getSpots().then((data) => {

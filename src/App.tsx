@@ -1,9 +1,10 @@
 import { Filters } from "components/Filters";
+import { IconSpot } from "components/IconSpot";
 import { LeafletCluster } from "components/LeafletCluster";
 import { Map } from "components/Map";
-import { IconSpot } from "components/IconSpot";
-import { Filters as TFilters, getSpots, Spot } from "datasource";
-import { marker, divIcon, Marker, LatLng } from "leaflet";
+import { getSpots } from "datasource";
+import { Filters as TFilters, Spot } from "datasource/types";
+import { divIcon, LatLng, marker, Marker } from "leaflet";
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 

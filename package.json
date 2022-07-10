@@ -6,7 +6,8 @@
     "dev": "yarn install && vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "update:datasource": "node scripts/update_fcc"
   },
   "dependencies": {
     "clsx": "1.1.1",

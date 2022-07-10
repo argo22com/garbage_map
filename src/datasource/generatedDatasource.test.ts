@@ -1,40 +1,27 @@
 import { getMappedData } from "./generatedDatasource";
 
 // mock spots - we don't care about actual data, but about the structure, which has to remain the same
-jest.mock("./generated/spots.json", () => [
-  {
-    id: 1,
-    location: {
-      address_simple: "A. Trägera 266/113",
-      location_latitude: 49.005944075539205,
-      location_longitude: 14.476660503581881,
-      location_origin_x: 1162728.497,
-      location_origin_y: 755191.194,
+jest.mock("./generated/fcc.json", () => ({
+  features: [
+    {
+      attributes: {
+        Stanoviště: "Plzeňská 608/71, naproti",
+        Souřadnice_nádoby: "[N 48,990591102°, E 14,463342364°]",
+        Souřadnice_stanoviště: "[N 48,990644999°, E 14,463385000°]",
+        Druh_odpadu: "plasty",
+        Počet_nádob__ks_: 1,
+        Objem_nádob__l_: 2500,
+        Typ_nádoby: "spodní výsyp",
+        Četnost_svozu: "1 x týdně",
+        Den_svozu: "středa",
+        x: 48990650000,
+        y: 14463380000,
+        ObjectId: 1,
+      },
+      geometry: { x: 14.463385, y: 48.990644999 },
     },
-    trashes: ["t1", "t2"],
-    uid: "0cbcb8b2-7de5-4603-bc9a-da5b699d9172",
-  },
-]);
-// mock trashes - we don't care about actual data, but about the structure, which has to remain the same
-jest.mock("./generated/trashes.json", () => [
-  {
-    capacity: "1 x 2500 l, spodní výsyp",
-    clear_day: "úterý",
-    clear_frequency: "1 x týdně",
-    mark: "0cbcb8b2-7de5-4603-bc9a-da5b699d9172",
-    type: "Papír",
-    uid: "t1",
-  },
-
-  {
-    capacity: "1 x 2500 l, spodní výsyp",
-    clear_day: "pátek, úterý",
-    clear_frequency: "2 x týdně",
-    mark: "0cbcb8b2-7de5-4603-bc9a-da5b699d9172",
-    type: "Kovy",
-    uid: "t2",
-  },
-]);
+  ],
+}));
 
 test("properly maps spots and containers", () => {
   getMappedData().then((data) => expect(data).toMatchSnapshot());

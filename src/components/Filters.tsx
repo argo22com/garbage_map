@@ -1,5 +1,5 @@
 import { CheckBox } from "components/CheckBox";
-import { ContainerType, Filters as TFilters } from "datasource";
+import { ContainerType, Filters as TFilters } from "datasource/types";
 import { useCallback } from "react";
 import { containerTypeKeys, containerTypes } from "utils/container";
 
