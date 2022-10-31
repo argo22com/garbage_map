@@ -9,7 +9,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
-    "clsx": "1.1.1",
+    "clsx": "1.2.1",
     "leaflet": "1.7.1",
     "leaflet.markercluster": "1.5.3",
     "react": "17.0.2",
