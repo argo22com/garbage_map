@@ -2526,10 +2526,10 @@
   dependencies:
     "@types/geojson" "*"
 
-"@types/leaflet@1.7.9":
-  version "1.7.9"
-  resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.7.9.tgz#7993d34f14cfa88c45b3d490daba39a3a1be9a2b"
-  integrity sha512-H8vPgD49HKzqM41ArHGZM70g/tfhp8W+JcPxfnF+5H/Xvp+xiP+KQOUNWU8U89fqS1Jj3cpRY/+nbnaHFzwnFA==
+"@types/leaflet@1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.9.0.tgz#8caf452255e16cb15e0eabcb0d2a26793da0a6a2"
+  integrity sha512-7LeOSj7EloC5UcyOMo+1kc3S1UT3MjJxwqsMT1d2PTyvQz53w0Y0oSSk9nwZnOZubCmBvpSNGceucxiq+ZPEUw==
   dependencies:
     "@types/geojson" "*"
 
@@ -5247,10 +5247,10 @@ leaflet.markercluster@1.5.3:
   resolved "https://registry.yarnpkg.com/leaflet.markercluster/-/leaflet.markercluster-1.5.3.tgz#9cdb52a4eab92671832e1ef9899669e80efc4056"
   integrity sha512-vPTw/Bndq7eQHjLBVlWpnGeLa3t+3zGiuM7fJwCkiMFq+nmRuG3RI3f7f4N4TDX7T4NpbAXpR2+NTRSEGfCSeA==
 
-leaflet@1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.7.1.tgz#10d684916edfe1bf41d688a3b97127c0322a2a19"
-  integrity sha512-/xwPEBidtg69Q3HlqPdU3DnrXQOvQU/CCHA1tcDQVzOwm91YMYaILjNp7L4Eaw5Z4sOYdbBz6koWyibppd8Zqw==
+leaflet@1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.9.2.tgz#168b6c6ef1d4d1e8409bde2c4ad050c249c4dbe6"
+  integrity sha512-Kc77HQvWO+y9y2oIs3dn5h5sy2kr3j41ewdqCMEUA4N89lgfUUfOBy7wnnHEstDpefiGFObq12FdopGRMx4J7g==
 
 leven@^3.1.0:
   version "3.1.0"
